@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amper, A | SA</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="icon" type="image/png" href="img/aa_logo.png">
+</head>
+<body style="background-color:rgb(201, 201, 201)">
+    <div id="navbar">
+        <div style="display: flex;">
+            <h3 class="navicon"><a href="index.html"><img src="img/aa_logo.png" style="width: 60px;"></a></h3>
+            <h3 class="navtext"><a href="">Contact</a></h3>
+        </div> 
+    </div>
+
+    <div class="container mt-5">
+      <button type="button" class="btn btn-dark mb-2" style="float: right;" data-bs-toggle="modal" data-bs-target="#newCustomer";>Add</button>
+
+          <div class="modal fade" id="newCustomer" data-bs-backdrop="static" style="padding-right: 250px; padding-top: 150px;" data-bs-keyboard="false" tabindex="-1" aria-labelledby="newCustomerLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content" style="width: 800px; background-color: rgb(255, 255, 255)">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="newCustomerLabel" style="color:black; font-size: 24px;">New Order</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form action="">
+                      <input type="text" class="form-control" style="padding-left: 5px;" placeholder="OR Number" style="width: 20%;" id="ORNumber">
+                      <input type="text" class="form-control" style="padding-left: 5px;" placeholder="Customer Name (First Name & Last Name)" id="customerName" style="width: 70%;">            
+                  </form>
+                </div>
+                <div class="modal-body">
+                    <hr style="margin-top : 0;">
+                  <form action="">
+                      <h3 class="itemTxt" style="font-size: 22px;">Items</h3>
+                      <div class="row">
+                          <div class="col-3">
+                            <select name="item1" id="item1" style="height: 100%; width: 195px;" disabled>
+                                <option value="" selected disabled> </option>
+                            </select>
+                          </div>
+                          <div class="col-3">
+                            <input type="text" class="form-control" placeholder="Price" id="price1" disabled>
+                          </div>
+                          <div class="col-3">
+                            <input type="number" min="0" class="form-control" placeholder="Qty" id="qty1" disabled>
+                          </div>
+                          <div class="col-3">
+                            <input type="text" class="form-control" placeholder="Subtotal" id="subtotal1" disabled>
+                          </div>
+                      </div>       
+                      <div class="row">
+                          <div class="col-3">
+                            <select name="item2" id="item2" style="height: 100%; width: 195px;" disabled>
+                                <option value="" selected disabled> </option>
+                             
+                            </select>
+                          </div>
+                          <div class="col-3">
+                            <input type="text" class="form-control" placeholder="Price" id="price2" disabled>
+                          </div>
+                          <div class="col-3">
+                            <input type="number" min="0" class="form-control" placeholder="Qty" id="qty2" disabled>
+                          </div>
+                          <div class="col-3">
+                            <input type="text" class="form-control" placeholder="Subtotal" id="subtotal2" disabled>
+                          </div>
+                      </div>       
+                      <div class="row">
+                          <div class="col-3">
+                            <select name="item3" id="item3" style="height: 100%; width: 195px;" disabled>
+                                <option value="" selected disabled> </option>
+                            </select>
+                          </div>
+                          <div class="col-3">
+                            <input type="text" class="form-control" placeholder="Price" id="price3" disabled>
+                          </div>
+                          <div class="col-3">
+                            <input type="number" min="0" class="form-control" placeholder="Qty" id="qty3" disabled>
+                          </div>
+                          <div class="col-3">
+                            <input type="text" class="form-control" placeholder="Subtotal" id="subtotal3" disabled >
+                          </div>
+                      </div>       
+                      <div class="row">
+                          <div class="col-3">
+                            <select name="item4" id="item4" style="height: 100%; width: 195px;" disabled>
+                                <option value="" selected disabled> </option>
+                            </select>
+                          </div>
+                          <div class="col-3">
+                            <input type="text" class="form-control" placeholder="Price" id="price4" disabled>
+                          </div>
+                          <div class="col-3">
+                            <input type="number" min="0" class="form-control" placeholder="Qty" id="qty4" disabled>
+                          </div>
+                          <div class="col-3">
+                            <input type="text" class="form-control" placeholder="Subtotal" id="subtotal4" disabled>
+                          </div>
+                      </div>       
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-success" id="save" style="background-color: black; font-weight: bold; " disabled data-bs-dismiss="modal">Save</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+    <table class="table table-striped" id="displayTable" style="background-color: black; color:white;">
+              <tr class="tableItems" style="color: black; background-color: rgb(255, 255, 255);" >
+                  <th scope="row" class="text-center">#</th>
+                  <th scope="row" class="text-center">Order #</th>
+                  <th scope="row" class="text-center">Customer Name</th>
+                  <th scope="row" class="text-center">Total</th>
+                  <th scope="row" class="text-center">Actions</th>
+              </tr>
+          </table>
+          
+          <div class="modal fade" id="viewItem" tabindex="-1" aria-labelledby="viewItemLabel" aria-hidden="true" style="padding-right: 500px; padding-left: 510px;">
+            <div class="modal-dialog">
+              <div class="modal-content" style="width: 700px; height: 700px; background-color: rgb(255, 255, 255)">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="viewItemLabel" style="color: black; font-size: 24px;">Order Details</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form action="">
+                    <input type="text" class="form-control" placeholder="OR Number" style="width: 100%;" id="ORNumberView" disabled>
+                    <input type="text" class="form-control" placeholder="Customer Name" id="customerNameView" disabled>            
+                  </form>                  
+                </div>
+
+          <div class="modal-body">
+            <hr>
+              <h3 style="color:black; font-size: 22px;">Items</h3>
+              <div class="container">
+                <div class="row" id="viewItemBody" style="width: 100%; justify-content: space-around; align-items: center; display: flex;">                                      
+                </div>
+              </div>
+              <br>
+              <br>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <script src="/js/localStorage.js"></script>
+    <script src="/js/displayTable.js"></script>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/formValidation.js"></script>
+    <script src="/js/viewOrder.js"></script>
+    
+</body>
+</html>
